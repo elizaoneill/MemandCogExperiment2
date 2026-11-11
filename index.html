@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory and Encoding Experiment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">PSYCHOLOGY EXPERIMENT</p>
+      <h1>Memory and Encoding Strategies</h1>
+      <p class="subtitle">A short study of how different ways of encoding information affect later recall.</p>
+    </header>
+
+    <section id="welcome" class="panel">
+      <h2>Welcome</h2>
+      <p>You will study 18 words using three different strategies. After a short counting task, you will be asked to recall as many words as you can.</p>
+      <p>Try to follow the instructions for each strategy. Words will appear one at a time. You will not be able to go back to earlier words.</p>
+      <label for="participantId">Participant code (optional)</label>
+      <input id="participantId" type="text" maxlength="40" placeholder="Enter a code or leave blank">
+      <button id="startBtn" class="primary">Begin experiment</button>
+      <p class="small">This demonstration runs entirely in your browser. Your responses are not sent to a server.</p>
+    </section>
+
+    <section id="instructions" class="panel hidden">
+      <p class="eyebrow" id="blockCounter"></p>
+      <h2 id="strategyTitle"></h2>
+      <p id="strategyDescription"></p>
+      <p>When you are ready, begin the word list.</p>
+      <button id="beginBlockBtn" class="primary">Begin this block</button>
+    </section>
+
+    <section id="study" class="panel hidden center">
+      <p class="eyebrow" id="studyProgress"></p>
+      <div id="wordDisplay" aria-live="polite">Ready?</div>
+      <p class="small">Study the word until it disappears.</p>
+    </section>
+
+    <section id="distractor" class="panel hidden">
+      <h2>Distractor task</h2>
+      <p>Starting with the number below, count backward by 3s. Type each next number and press Enter. Continue until the timer reaches zero.</p>
+      <div id="startingNumber" class="starting-number"></div>
+      <div class="timer" id="timer">30</div>
+      <label for="countInput">Your next number</label>
+      <input id="countInput" type="number" inputmode="numeric" placeholder="Type the next number">
+      <button id="submitCountBtn" class="primary">Submit number</button>
+      <p id="countFeedback" class="small" aria-live="polite"></p>
+      <p class="small">You can keep entering numbers for the full 30 seconds.</p>
+    </section>
+
+    <section id="recall" class="panel hidden">
+      <h2>Free recall</h2>
+      <p>Type as many of the words from the study phase as you can remember. Enter one word per line. The order does not matter.</p>
+      <label for="recallInput">Words you remember</label>
+      <textarea id="recallInput" rows="9" placeholder="Enter one word per line..."></textarea>
+      <button id="submitRecallBtn" class="primary">Submit recall</button>
+    </section>
+
+    <section id="results" class="panel hidden">
+      <h2>Your results</h2>
+      <p id="resultIntro"></p>
+      <div id="scoreResults"></div>
+      <div class="download-actions">
+        <button id="summaryDownloadBtn" class="primary">Download summary CSV</button>
+        <button id="trialDownloadBtn" class="secondary">Download trial-level CSV</button>
+      </div>
+      <p class="small">Download both files before closing or refreshing this page. The files are saved locally to your device.</p>
+      <button id="restartBtn" class="secondary">Run another session</button>
+    </section>
+
+    <footer>Memory and Encoding Strategies · Browser-based class project</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
